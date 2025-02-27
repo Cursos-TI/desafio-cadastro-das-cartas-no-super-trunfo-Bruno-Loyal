@@ -77,8 +77,7 @@ int main(){
 
 
     // Calculos carta 2 sobre informações a mais com base nos dados coletados.
-    
-    
+        
     // Densidade Populacional:
     float densidade_populacional_2 = (float)populacao_2 / area_km;
     
