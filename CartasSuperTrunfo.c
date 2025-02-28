@@ -140,13 +140,13 @@ int main(){
     float super_poder_maior = super_poder > super_poder_2;
 
     // exibição dos resultados da comparação:
-    printf("População: %d", populacao_maior);
-    printf("Área: %d", area_maior);
-    printf("PIB: %d", pib_maior);
-    printf("Pontos Turísticos: %d", pontos_turisticos_maior);
-    printf("Densidade Populacional: %d", densidade_populacional_menor);
-    printf("PIB per Capita: %d", pib_percapita_maior);
-    printf("Super Poder: %d", super_poder_maior);
+    printf("População: %.0f\n", populacao_maior);
+    printf("Área: %.0f\n", area_maior);
+    printf("PIB: %.0f\n", pib_maior);
+    printf("Pontos Turísticos: %.0f\n", pontos_turisticos_maior);
+    printf("Densidade Populacional: %.0f\n", densidade_populacional_menor);
+    printf("PIB per Capita: %.0f\n", pib_percapita_maior);
+    printf("Super Poder: %.0f\n", super_poder_maior);
     
 
     return 0;
