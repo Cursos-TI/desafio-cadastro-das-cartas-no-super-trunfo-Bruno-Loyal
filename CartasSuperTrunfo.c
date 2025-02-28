@@ -108,7 +108,7 @@ int main(){
     printf("Nº de Pontos Turísticos: %d\n", pontos_turisticos);
     printf("Densidade Populacional: %.2f hab/Km²\n", densidade_populacional);
     printf("PIB per Capita: %.2f\n", pib_percapita);
-    printf("Super Poder: %f", super_poder);
+    printf("Super Poder: %.2f\n", super_poder);
 
     //Exibição na tela da Carta 2
     printf("Carta 2: \n");
@@ -121,7 +121,7 @@ int main(){
     printf("Nº de Pontos Turísticos: %d\n", pontos_turisticos_2);
     printf("Densidade Populacional: %.2f hab/Km²\n", densidade_populacional_2);
     printf("PIB per Capita: %.2f\n", pib_percapita_2);
-    printf("Super Poder: %f", super_poder_2);
+    printf("Super Poder: %.2f\n", super_poder_2);
     
 
 
@@ -131,22 +131,22 @@ int main(){
     printf("Resultado boleano caso resultado seja [0] carta 2 vence\n");
 
     // calculo da comparação entre Carta 1 e Carta 2:
-    float populacao_maior = populacao > populacao_2;
-    float area_maior = area_km > area_km_2;
-    float pib_maior = pib > pib_2;
-    float pontos_turisticos_maior = pontos_turisticos > pontos_turisticos_2; 
-    float densidade_populacional_menor = densidade_populacional < densidade_populacional_2;
-    float pib_percapita_maior = pib_percapita > pib_percapita_2;
-    float super_poder_maior = super_poder > super_poder_2;
+    int populacao_maior = populacao > populacao_2;
+    int area_maior = area_km > area_km_2;
+    int pib_maior = pib > pib_2;
+    int pontos_turisticos_maior = pontos_turisticos > pontos_turisticos_2; 
+    int densidade_populacional_menor = densidade_populacional < densidade_populacional_2;
+    int pib_percapita_maior = pib_percapita > pib_percapita_2;
+    int super_poder_maior = super_poder > super_poder_2;
 
     // exibição dos resultados da comparação:
-    printf("População: %.0f\n", populacao_maior);
-    printf("Área: %.0f\n", area_maior);
-    printf("PIB: %.0f\n", pib_maior);
-    printf("Pontos Turísticos: %.0f\n", pontos_turisticos_maior);
-    printf("Densidade Populacional: %.0f\n", densidade_populacional_menor);
-    printf("PIB per Capita: %.0f\n", pib_percapita_maior);
-    printf("Super Poder: %.0f\n", super_poder_maior);
+    printf("População: %d\n", populacao_maior);
+    printf("Área: %d\n", area_maior);
+    printf("PIB: %d\n", pib_maior);
+    printf("Pontos Turísticos: %d\n", pontos_turisticos_maior);
+    printf("Densidade Populacional: %d\n", densidade_populacional_menor);
+    printf("PIB per Capita: %d\n", pib_percapita_maior);
+    printf("Super Poder: %d\n", super_poder_maior);
     
 
     return 0;
