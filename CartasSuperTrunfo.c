@@ -13,11 +13,11 @@ int main(){
     //Solicitações das informações carta 1
     printf("Cadastro das informações Carta 1!\n");
 
-    //printf("Digite uma letra de 'A' a 'H' Representado um estado: \n");
-    //scanf(" %c", &estado);
+    printf("Digite uma letra de 'A' a 'H' Representado um estado: \n");
+    scanf(" %c", &estado);
     
-    //printf("Defina o número da carta (01 a 04): \n");
-    //scanf(" %s", &codigo_da_carta);
+    printf("Defina o número da carta (01 a 04): \n");
+    scanf(" %s", &codigo_da_carta);
 
     printf("Qual o nome da cidade? \n");
     scanf(" %s", &cidade);
