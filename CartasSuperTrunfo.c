@@ -13,11 +13,11 @@ int main(){
     //Solicitações das informações carta 1
     printf("Cadastro das informações Carta 1!\n");
 
-    printf("Digite uma letra de 'A' a 'H' Representado um estado: \n");
-    scanf(" %c", &estado);
+    //printf("Digite uma letra de 'A' a 'H' Representado um estado: \n");
+    //scanf(" %c", &estado);
     
-    printf("Defina o número da carta (01 a 04): \n");
-    scanf(" %s", &codigo_da_carta);
+    //printf("Defina o número da carta (01 a 04): \n");
+    //scanf(" %s", &codigo_da_carta);
 
     printf("Qual o nome da cidade? \n");
     scanf(" %s", &cidade);
@@ -42,6 +42,11 @@ int main(){
     
     // PIB per Capita:
     float pib_percapita = pib / (float)populacao;
+
+    // Super Poder:
+    float densidade_inversa = area_km / (float)populacao; // inversão da densidade populacional
+    float somar_todos_valores = (float)populacao + area_km + pib + (float)pontos_turisticos + densidade_inversa;
+    float super_poder = somar_todos_valores;
     
 
     
@@ -84,6 +89,11 @@ int main(){
     // PIB per Capita:
     float pib_percapita_2 = pib / (float)populacao_2;
 
+    // Super Poder:
+    float densidade_inversa_2 = area_km_2 / (float)populacao_2; // inversão da densidade populacional
+    float somar_todos_valores_2 = (float)populacao_2 + area_km_2 + pib_2 + (float)pontos_turisticos_2 + densidade_inversa_2;
+    float super_poder_2 = somar_todos_valores_2;
+
 
     //Exibição na tela da Carta 1
     printf("Carta 1: \n");
@@ -96,7 +106,7 @@ int main(){
     printf("Nº de Pontos Turísticos: %d\n", pontos_turisticos);
     printf("Densidade Populacional: %.2f hab/Km²\n", densidade_populacional);
     printf("PIB per Capita: %.2f\n", pib_percapita);
-    
+    printf("Super Poder: %f", super_poder);
 
     //Exibição na tela da Carta 2
     printf("Carta 2: \n");
@@ -109,7 +119,33 @@ int main(){
     printf("Nº de Pontos Turísticos: %d\n", pontos_turisticos_2);
     printf("Densidade Populacional: %.2f hab/Km²\n", densidade_populacional_2);
     printf("PIB per Capita: %.2f\n", pib_percapita_2);
-
+    printf("Super Poder: %f", super_poder_2);
     
+
+
+    // Comparação das cartas:
+    printf("Resultado de qual carta é mais forte!\n");
+    printf("Resultado boleano caso resultado seja [1] carta 1 vence\n");
+    printf("Resultado boleano caso resultado seja [0] carta 2 vence\n");
+
+    // calculo da comparação entre Carta 1 e Carta 2:
+    float populacao_maior = populacao > populacao_2;
+    float area_maior = area_km > area_km_2;
+    float pib_maior = pib > pib_2;
+    float pontos_turisticos_maior = pontos_turisticos > pontos_turisticos_2; 
+    float densidade_populacional_menor = densidade_populacional < densidade_populacional_2;
+    float pib_percapita_maior = pib_percapita > pib_percapita_2;
+    float super_poder_maior = super_poder > super_poder_2;
+
+    // exibição dos resultados da comparação:
+    printf("População: %f", populacao_maior);
+    printf("Área: %f", area_maior);
+    printf("PIB: %f", pib_maior);
+    printf("Pontos Turísticos: %f", pontos_turisticos_maior);
+    printf("Densidade Populacional: %f", densidade_populacional_menor);
+    printf("PIB per Capita: %f", pib_percapita_maior);
+    printf("Super Poder: %f", super_poder_maior);
+    
+
     return 0;
 }
