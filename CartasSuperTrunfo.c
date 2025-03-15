@@ -5,10 +5,9 @@
 int main(){
 
     //Carta 1 
-    char estado;
+    char estado, codigo_da_carta[10], cidade[20];
     long int populacao;
     int pontos_turisticos;
-    char codigo_da_carta[10], cidade[20];
     float area_km, pib;
         
     //Solicitações das informações carta 1
@@ -32,7 +31,7 @@ int main(){
     printf("Qual o valor do PIB(Produto Interno Bruto da cidade) de %s: \nUtilize apenas 1 ponto nas duas ultimas casas:  ", cidade);
     scanf(" %f", &pib);
 
-    printf("Qual a quantidade de pontos turísticos em %s: \n", cidade);
+    printf("Qual a quantidade de pontos turísticos em %s: \n\n", cidade);
     scanf(" %d", &pontos_turisticos);
 
 
@@ -52,10 +51,9 @@ int main(){
 
     
     //Carta 2  
-    char estado_2;
+    char estado_2, codigo_da_carta_2[10], cidade_2[20];
     long int populacao_2;
     int pontos_turisticos_2;
-    char codigo_da_carta_2[10], cidade_2[20];
     float area_km_2, pib_2;
         
     //Solicitações das informações carta 2
@@ -79,7 +77,7 @@ int main(){
     printf("Qual o valor do PIB(Produto Interno Bruto da cidade) de %s: \nUtilize apenas 1 ponto nas duas ultimas casas:  ", cidade_2);
     scanf(" %f", &pib_2);
 
-    printf("Qual a quantidade de pontos turísticos em %s: \n", cidade_2);
+    printf("Qual a quantidade de pontos turísticos em %s: \n\n", cidade_2);
     scanf(" %d", &pontos_turisticos_2);
 
 
@@ -108,7 +106,7 @@ int main(){
     printf("Nº de Pontos Turísticos: %d\n", pontos_turisticos);
     printf("Densidade Populacional: %.2f hab/Km²\n", densidade_populacional);
     printf("PIB per Capita: %.2f\n", pib_percapita);
-    printf("Super Poder: %.2f\n", super_poder);
+    printf("Super Poder: %.2f\n\n", super_poder);
 
     //Exibição na tela da Carta 2
     printf("Carta 2: \n");
@@ -121,16 +119,62 @@ int main(){
     printf("Nº de Pontos Turísticos: %d\n", pontos_turisticos_2);
     printf("Densidade Populacional: %.2f hab/Km²\n", densidade_populacional_2);
     printf("PIB per Capita: %.2f\n", pib_percapita_2);
-    printf("Super Poder: %.2f\n", super_poder_2);
+    printf("Super Poder: %.2f\n\n", super_poder_2);
     
 
 
     // Comparação das cartas:
     printf("Resultado de qual carta é mais forte!\n");
-    printf("Resultado boleano caso resultado seja [1] carta 1 vence\n");
-    printf("Resultado boleano caso resultado seja [0] carta 2 vence\n");
+   
+    // Determinar pontos de vitória de cada carta:
+    int pontos_carta01 = 0, pontos_carta02 = 0;// saldo da pontuação geral de cada carta
+    
+    // Determinar carta vencedora:
+    printf("Ganha 1 ponto por vitória, em caso de empate as duas carta ganha 1 ponto\n\n");
 
-    // calculo da comparação entre Carta 1 e Carta 2:
+    // atributo população
+    printf("Atributo de comparação: população da carta: %s x população da carta: %s \n", populacao, populacao_2);
+    if (populacao > populacao_2){
+        printf("Atributo população a Carta %s venceu\n\n", codigo_da_carta);
+        pontos_carta01 += 1; // adiciona ponto a carta 1 
+    } else if (populacao == populacao_2){
+        printf("Atributo população as duas cartas empataram!\n\n");
+        pontos_carta01 += 1;// adiciona ponto a carta 1 
+        pontos_carta02 += 1;// adiciona ponto a carta 2 
+    } else {
+        printf("Atributo população a carta %s venceu\n\n", codigo_da_carta_2);
+        pontos_carta02 += 1;// adiciona ponto a carta 2 
+    }
+
+    //atributo area_km
+    printf("Atributo de comparação: area_km² da carta: %s x area_km² da carta: %s \n", area_km, area_km_2);
+    if (area_km > area_km_2){
+        printf("Carta %s venceu\n\n", codigo_da_carta);
+        pontos_carta01 += 1; // adiciona ponto a carta 1 
+    } else if (area_km == area_km_2){
+        printf("As duas cartas empataram!\n\n");
+        pontos_carta01 += 1;// adiciona ponto a carta 1 
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    } else {
+        printf("Carta %s venceu\n\n", codigo_da_carta_2);
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    }
+
+     //atributo PIB
+     printf("Atributo de comparação: PIB da carta: %s x PIB da carta: %s \n", pib, pib_2);
+     if (pib > pib_2){
+         printf("Carta %s venceu\n\n", codigo_da_carta);
+         pontos_carta01 += 1; // adiciona ponto a carta 1 
+     } else if (pib == pib_2){
+         printf("As duas cartas empataram!\n\n");
+         pontos_carta01 += 1;// adiciona ponto a carta 1 
+         pontos_carta02 += 1;// adiciona ponto a carta 2
+     } else {
+         printf("Carta %s venceu\n\n", codigo_da_carta_2);
+         pontos_carta02 += 1;// adiciona ponto a carta 2
+     }
+
+
     int populacao_maior = populacao > populacao_2;
     int area_maior = area_km > area_km_2;
     int pib_maior = pib > pib_2;
