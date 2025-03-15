@@ -5,7 +5,7 @@
 int main(){
 
     //Carta 1 
-    char estado, codigo_da_carta[10], cidade[20];
+    char estado[5], codigo_da_carta[10], cidade[20];
     long int populacao;
     int pontos_turisticos;
     float area_km, pib;
@@ -13,8 +13,8 @@ int main(){
     //Solicitações das informações carta 1
     printf("Cadastro das informações Carta 1!\n");
 
-    printf("Digite uma letra de 'A' a 'H' Representado um estado: \n");
-    scanf(" %c", &estado);
+    printf("Digite 'UR' Representado um estado: \n");
+    scanf(" %s", &estado);
     
     printf("Defina o número da carta (01 a 04): \n");
     scanf(" %s", &codigo_da_carta);
@@ -51,7 +51,7 @@ int main(){
 
     
     //Carta 2  
-    char estado_2, codigo_da_carta_2[10], cidade_2[20];
+    char estado_2[5], codigo_da_carta_2[10], cidade_2[20];
     long int populacao_2;
     int pontos_turisticos_2;
     float area_km_2, pib_2;
@@ -59,8 +59,8 @@ int main(){
     //Solicitações das informações carta 2
     printf("Cadastro das informações Carta 2!\n");
 
-    printf("Digite uma letra de 'A' a 'H' Representado um estado: \n");
-    scanf(" %c", &estado_2);
+    printf("Digite 'UR' Representado um estado: \n");
+    scanf(" %s", &estado_2);
     
     printf("Defina o número da carta (01 a 04): \n");
     scanf(" %s", &codigo_da_carta_2);
@@ -97,8 +97,8 @@ int main(){
 
     //Exibição na tela da Carta 1
     printf("Carta 1: \n");
-    printf("Estado: %c\n", estado);
-    printf("Código: %c%s\n",estado, codigo_da_carta);
+    printf("Estado: %s\n", estado);
+    printf("Código: %s %s\n",estado, codigo_da_carta);
     printf("Nome da cidade: %s\n", cidade);
     printf("População: %ld\n", populacao);
     printf("Área: %.3f Km²\n", area_km);
@@ -110,8 +110,8 @@ int main(){
 
     //Exibição na tela da Carta 2
     printf("Carta 2: \n");
-    printf("Estado: %c\n", estado_2);
-    printf("Código: %c%s\n",estado_2, codigo_da_carta_2);
+    printf("Estado: %s\n", estado_2);
+    printf("Código: %s %s\n",estado_2, codigo_da_carta_2);
     printf("Nome da cidade: %s\n", cidade_2);
     printf("População: %ld\n", populacao_2);
     printf("Área: %.3f Km²\n", area_km_2);
@@ -133,16 +133,18 @@ int main(){
     printf("Ganha 1 ponto por vitória, em caso de empate as duas carta ganha 1 ponto\n\n");
 
     // atributo população
-    printf("Atributo de comparação: população da carta: %s x população da carta: %s \n", populacao, populacao_2);
+    printf("Atributo de comparação: População\n\n");
+    printf("Carta %s - %s (%s): %ld\n", codigo_da_carta, cidade, estado, populacao);
+    printf("Carta %s - %s (%s): %ld\n", codigo_da_carta_2, cidade_2, estado_2, populacao_2);
     if (populacao > populacao_2){
-        printf("Atributo população a Carta %s venceu\n\n", codigo_da_carta);
+        printf("Atributo população a Carta %s (%s)venceu\n\n", codigo_da_carta, cidade);
         pontos_carta01 += 1; // adiciona ponto a carta 1 
     } else if (populacao == populacao_2){
         printf("Atributo população as duas cartas empataram!\n\n");
         pontos_carta01 += 1;// adiciona ponto a carta 1 
         pontos_carta02 += 1;// adiciona ponto a carta 2 
     } else {
-        printf("Atributo população a carta %s venceu\n\n", codigo_da_carta_2);
+        printf("Atributo população a carta %s (%S)venceu\n\n", codigo_da_carta_2, cidade_2);
         pontos_carta02 += 1;// adiciona ponto a carta 2 
     }
 
@@ -160,38 +162,48 @@ int main(){
         pontos_carta02 += 1;// adiciona ponto a carta 2
     }
 
-     //atributo PIB
-     printf("Atributo de comparação: PIB da carta: %s x PIB da carta: %s \n", pib, pib_2);
-     if (pib > pib_2){
-         printf("Carta %s venceu\n\n", codigo_da_carta);
-         pontos_carta01 += 1; // adiciona ponto a carta 1 
-     } else if (pib == pib_2){
-         printf("As duas cartas empataram!\n\n");
-         pontos_carta01 += 1;// adiciona ponto a carta 1 
-         pontos_carta02 += 1;// adiciona ponto a carta 2
-     } else {
-         printf("Carta %s venceu\n\n", codigo_da_carta_2);
-         pontos_carta02 += 1;// adiciona ponto a carta 2
-     }
+    //atributo PIB
+    printf("Atributo de comparação: PIB da carta: %s x PIB da carta: %s \n", pib, pib_2);
+    if (pib > pib_2){
+        printf("Carta %s venceu\n\n", codigo_da_carta);
+        pontos_carta01 += 1; // adiciona ponto a carta 1 
+    } else if (pib == pib_2){
+        printf("As duas cartas empataram!\n\n");
+        pontos_carta01 += 1;// adiciona ponto a carta 1 
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    } else {
+        printf("Carta %s venceu\n\n", codigo_da_carta_2);
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    }
 
+    //atributo Densidade Populacional
+    printf("Atributo de comparação: Densidade populacional da carta: %s x Densidade populacional da carta: %s \n", densidade_populacional, densidade_populacional_2);
+    if (densidade_populacional < densidade_populacional_2){
+        printf("Carta %s venceu\n\n", codigo_da_carta);
+        pontos_carta01 += 1; // adiciona ponto a carta 1 
+    } else if (densidade_populacional == densidade_populacional_2){
+        printf("As duas cartas empataram!\n\n");
+        pontos_carta01 += 1;// adiciona ponto a carta 1 
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    } else {
+        printf("Carta %s venceu\n\n", codigo_da_carta_2);
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    }
 
-    int populacao_maior = populacao > populacao_2;
-    int area_maior = area_km > area_km_2;
-    int pib_maior = pib > pib_2;
-    int pontos_turisticos_maior = pontos_turisticos > pontos_turisticos_2; 
-    int densidade_populacional_menor = densidade_populacional < densidade_populacional_2;
-    int pib_percapita_maior = pib_percapita > pib_percapita_2;
-    int super_poder_maior = super_poder > super_poder_2;
-
-    // exibição dos resultados da comparação:
-    printf("População: %d\n", populacao_maior);
-    printf("Área: %d\n", area_maior);
-    printf("PIB: %d\n", pib_maior);
-    printf("Pontos Turísticos: %d\n", pontos_turisticos_maior);
-    printf("Densidade Populacional: %d\n", densidade_populacional_menor);
-    printf("PIB per Capita: %d\n", pib_percapita_maior);
-    printf("Super Poder: %d\n", super_poder_maior);
-    
+    //atributo PIB per capita
+    printf("Atributo de comparação: PIB per capita da carta: %s x PIB per capita da carta: %s \n", pib_percapita, pib_percapita_2);
+    if (pib_percapita > pib_percapita_2){
+        printf("Carta %s venceu\n\n", codigo_da_carta);
+        pontos_carta01 += 1; // adiciona ponto a carta 1 
+    } else if (pib_percapita == pib_percapita_2){
+        printf("As duas cartas empataram!\n\n");
+        pontos_carta01 += 1;// adiciona ponto a carta 1 
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    } else {
+        printf("Carta %s venceu\n\n", codigo_da_carta_2);
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    }
+        
 
     return 0;
 }
