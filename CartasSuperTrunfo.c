@@ -186,6 +186,24 @@ int main(){
         pontos_carta02 += 1;// adiciona ponto a carta 2
     }
 
+    //atributo Número de pontos turísticos
+    printf("\n\nAtributo de comparação: Pontos Turísticos\n\n");
+
+    printf("Carta %s - %s (%s): %d\n", codigo_da_carta, cidade, estado, pontos_turisticos);
+    printf("Carta %s - %s (%s): %d\n", codigo_da_carta_2, cidade_2, estado_2, pontos_turisticos_2);
+
+    if (pontos_turisticos > pontos_turisticos_2){
+        printf("Resultado: Carta %s (%s) venceu\n\n", codigo_da_carta, cidade);
+        pontos_carta01 += 1; // adiciona ponto a carta 1 
+    } else if (pontos_turisticos == pontos_turisticos_2){
+        printf("Resultado: As duas cartas empataram!\n\n");
+        pontos_carta01 += 1;// adiciona ponto a carta 1 
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    } else {
+        printf("Resultado: Carta %s (%s) venceu\n\n", codigo_da_carta_2, cidade_2);
+        pontos_carta02 += 1;// adiciona ponto a carta 2
+    }
+
     //atributo Densidade Populacional
     printf("\n\nAtributo de comparação: Densidade Populacional\n\n");
 
@@ -221,7 +239,23 @@ int main(){
         printf("Resultado: Carta %s (%s) venceu\n\n", codigo_da_carta_2, cidade_2);
         pontos_carta02 += 1;// adiciona ponto a carta 2
     }
-        
+    
+    //Resultado do combate de cartas
+    printf("\nResultado do Trunfo de cartas!!!\n\n");
+
+    printf("A carta %s - %s (%s) fez: %d pontos!\n", codigo_da_carta, cidade, estado, pontos_carta01);
+    printf("A carta %s - %s (%s) fez: %d pontos!\n", codigo_da_carta_2, cidade_2, estado_2, pontos_carta02);
+
+    if (pontos_carta01 > pontos_carta02){
+        printf("Carta Vencedora!!! %s - %s (%s) Com total de: %d pontos!\n", codigo_da_carta, cidade, estado, pontos_carta01);
+    } else if (pontos_carta01 < pontos_carta02){
+        printf("Carta Vencedora!!! %s - %s (%s) Com total de: %d pontos!\n", codigo_da_carta_2, cidade_2, estado_2, pontos_carta02);
+    } else{
+        printf("\nAs Duas cartas tem o mesmo tanto de pontos Empataram !!!\n\n");
+        printf("A carta %s - %s (%s) fez: %d pontos!\n", codigo_da_carta, cidade, estado, pontos_carta01);
+        printf("A carta %s - %s (%s) fez: %d pontos!\n", codigo_da_carta_2, cidade_2, estado_2, pontos_carta02);
+    }
+
 
     return 0;
 }
